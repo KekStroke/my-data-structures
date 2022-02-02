@@ -2,14 +2,16 @@
 // Created by Anvar on 1/30/2022.
 //
 
-#ifndef PROJECT1_QUEUELIST_H
-#define PROJECT1_QUEUELIST_H
+#ifndef PROJECT1_ARRAYQUEUE_H
+#define PROJECT1_ARRAYQUEUE_H
 
 template <class T>
-class QueueList {
+class ArrayQueue {
 public:
     // constructor
-    QueueList():arrlength{2}, queuesize{0}, front{0}, rear{0}, data{new T[arrlength]} {}
+    ArrayQueue():arrlength{2}, queuesize{0}, front{0}, rear{0} {
+        data = {new T[arrlength]};
+    }
 
     T first() {
         return data[front];
@@ -87,4 +89,4 @@ private:
 };
 
 
-#endif //PROJECT1_QUEUELIST_H
+#endif //PROJECT1_ARRAYQUEUE_H

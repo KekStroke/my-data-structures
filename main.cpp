@@ -1,93 +1,41 @@
 #include <iostream>
+#include <string>
 
 #include "ArrayList.h"
-#include "QueueList.h"
+#include "ArrayQueue.h"
 #include "LinkedList.h"
+#include "LinkedHashMap.h"
 
 int main() {
     LinkedList<int> mylist;
+    ArrayQueue<int> myqueue;
+    ArrayList<int> mylist2;
 
-    mylist.add(1);
-    mylist.add(2);
-    mylist.add(3);
-    mylist.add(2);
-    mylist.add(0, 10);
-    mylist.add_after(10, 20);
+    LinkedHashMap<string, int> myHashMap(17);
 
-    for (int i = 0; i < mylist.size(); i++) {
-        std::cout << mylist.get(i) << " ";
-    } std::cout << std::endl;
+    cout << myHashMap.size() << endl;
 
-    mylist.remove(1);
+    myHashMap.insert("hello", 10);
+    myHashMap.insert("Billy", 40);
+    myHashMap.insert("whoohoo",30);
 
-    for (int i = 0; i < mylist.size(); i++) {
-        std::cout << mylist.get(i) << " ";
-    } std::cout << std::endl;
+//    Entry<int, int> * entryPtr = myHashMap.findFirst(1);
 
-    mylist.remove_after(10);
+int val = myHashMap.get("hello");
 
-    for (int i = 0; i < mylist.size(); i++) {
-        std::cout << mylist.get(i) << " ";
-    } std::cout << std::endl;
+cout << "value of hello: " << val << endl;
+cout << "value of 2: " << myHashMap.get("2") << endl;
+cout << "value of Billy: " << myHashMap.get("Billy") << endl;
+cout << "value of whoohoo: " << myHashMap.get("whoohoo") << endl;
 
-    ArrayList<int> mylist1;
+cout << "Erased hello" << endl;
 
-    mylist1.add(1);
-    mylist1.add(2);
-    mylist1.add(3);
-    mylist1.add(2);
-    mylist1.add(0, 10);
-    mylist1.add_after(10, 20);
+myHashMap.remove("hello");
 
-    for (int i = 0; i < mylist1.size(); i++) {
-        std::cout << mylist1.get(i) << " ";
-    } std::cout << std::endl;
-
-    mylist1.remove(1);
-
-    for (int i = 0; i < mylist1.size(); i++) {
-        std::cout << mylist1.get(i) << " ";
-    } std::cout << std::endl;
-
-    mylist1.remove_after(10);
-
-    for (int i = 0; i < mylist1.size(); i++) {
-        std::cout << mylist1.get(i) << " ";
-    } std::cout << std::endl;
-
-    QueueList<int> myqueue;
-
-    for (int i = 1; i < 20; i++) {
-        myqueue.enqueue(i);
-    }
-
-    int currentsize = myqueue.size();
-    for (int i = 0; i < currentsize; i++) {
-        std::cout << myqueue.dequeue() << " ";
-    } std::cout << '\n'<<'\n';
-
-    int count = 0;
-    while (count < 10) {
-        for (int i = 0; i < 5; i++) {
-            myqueue.enqueue(i);
-        }
-
-        currentsize = myqueue.size();
-        for (int i = 0; i < currentsize; i++) {
-            std::cout << myqueue.dequeue() << " ";
-        } std::cout << '\n';
-
-        count++;
-    }
-
-//    LinkedList<int> mylist2;
-//
-//    mylist2.add(1);
-//
-//    for (int i = 0; i < 10; i++) {
-//        mylist2.add(i);
-//        std::cout << mylist2.get(i) << ' ';
-//    }
+cout << "value of hello: " << myHashMap.get("hello")  << endl;
+cout << "value of 2: " << myHashMap.get("2") << endl;
+cout << "value of Billy: " << myHashMap.get("Billy") << endl;
+cout << "value of whoohoo: " << myHashMap.get("whoohoo") << endl;
 
     return 0;
 }
