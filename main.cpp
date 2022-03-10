@@ -5,6 +5,7 @@
 #include "ArrayQueue.h"
 #include "LinkedList.h"
 #include "LinkedHashMap.h"
+#include "DoubleHashSet.h"
 
 int main() {
     LinkedList<int> mylist;
@@ -19,23 +20,25 @@ int main() {
     myHashMap.insert("Billy", 40);
     myHashMap.insert("whoohoo",30);
 
-//    Entry<int, int> * entryPtr = myHashMap.findFirst(1);
+    //    Entry<int, int> * entryPtr = myHashMap.findFirst(1);
 
-int val = myHashMap.get("hello");
+    int val = myHashMap.get("hello");
 
-cout << "value of hello: " << val << endl;
-cout << "value of 2: " << myHashMap.get("2") << endl;
-cout << "value of Billy: " << myHashMap.get("Billy") << endl;
-cout << "value of whoohoo: " << myHashMap.get("whoohoo") << endl;
+    cout << "value of hello: " << val << endl;
+    cout << "value of 2: " << myHashMap.get("2") << endl;
+    cout << "value of Billy: " << myHashMap.get("Billy") << endl;
+    cout << "value of whoohoo: " << myHashMap.get("whoohoo") << endl;
 
-cout << "Erased hello" << endl;
+    cout << "Erased hello" << endl;
 
-myHashMap.remove("hello");
+    myHashMap.remove("hello");
 
-cout << "value of hello: " << myHashMap.get("hello")  << endl;
-cout << "value of 2: " << myHashMap.get("2") << endl;
-cout << "value of Billy: " << myHashMap.get("Billy") << endl;
-cout << "value of whoohoo: " << myHashMap.get("whoohoo") << endl;
+    cout << "value of hello: " << myHashMap.get("hello")  << endl;
+    cout << "value of 2: " << myHashMap.get("2") << endl;
+    cout << "value of Billy: " << myHashMap.get("Billy") << endl;
+    cout << "value of whoohoo: " << myHashMap.get("whoohoo") << endl;
+
+    DoubleHashSet<string> a; 
 
     return 0;
 }
